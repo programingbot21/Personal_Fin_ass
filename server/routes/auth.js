@@ -338,7 +338,23 @@ router.put("/subtract/:transactionId", async (req, res) => {
   });
 
 
- 
+    //user
+    router.get("/user", async (req, res) => {
+      try {
+        const token = req.headers.authorization.split(" ")[1];
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const user = await User.findById(decoded.id);
+    
+        if (!user) return res.status(404).json({ msg: "User not found" });
+    
+        const transactions = await Transaction.find({ userId: user._id });
+    
+        res.json({ user, transactions });
+      } catch (error) {
+        res.status(500).json({ error: error.message });
+      }
+    });
+    
   
   
 

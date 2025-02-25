@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "finace" : "npm run dev --prefix ./finace",
+    "start": "concurrently \"npm run server\" \"npm run finace\""
   },
   "keywords": [],
   "author": "",

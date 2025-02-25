@@ -16,10 +16,10 @@ const TransactionSchema = new mongoose.Schema(
       enum: ["income", "expense"], // Restrict type values
       required: true,
     },
-    category: {
-      type: String,
-      required: true,
-    },
+    // category: {
+    //   type: String,
+    //   required: true,
+    // },
     date: {
       type: Date,
       default: Date.now,

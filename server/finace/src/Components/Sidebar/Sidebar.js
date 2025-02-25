@@ -1,5 +1,7 @@
 import Link from "next/link";
  import { HomeIcon, TableCellsIcon, CogIcon, ArrowRightOnRectangleIcon } from "@heroicons/react/24/outline";
+import Logout from "../Logout/Logout";
+
 
 export const Sidebar = () => {
   return (
@@ -10,6 +12,12 @@ export const Sidebar = () => {
           <li>
             <Link href="/dashboard" className="flex items-center space-x-2 text-gray-300 hover:text-white">
               <HomeIcon className="w-5 h-5" /> <span>Dashboard</span>
+            </Link>
+          </li>
+
+          <li>
+            <Link href="/" className="flex items-center space-x-2 text-gray-300 hover:text-white">
+              <HomeIcon className="w-5 h-5" /> <span>Home</span>
             </Link>
           </li>
           <li>
@@ -27,7 +35,18 @@ export const Sidebar = () => {
             <ArrowRightOnRectangleIcon className="w-5 h-5" />
               <span>Logout</span>
             </Link>
+            </li>
+            <li>
+            <Link href="/transaction" className="flex items-center space-x-2 text-gray-300 hover:text-white">
+              <CogIcon className="w-5 h-5" /> <span>Transaction</span>
+            </Link>
           </li>
+          <li>
+            <Link href="/create" className="flex items-center space-x-2 text-gray-300 hover:text-white">
+              <CogIcon className="w-5 h-5" /> <span>Create</span>
+            </Link>
+          </li>
+        
         </ul>
       </nav>
     </aside>
