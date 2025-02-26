@@ -1,8 +1,7 @@
 import express from "express";
 
 
-// import Transaction from "../models/Transaction";
-// import Transaction from "../models/transaction";
+
 import User1 from "../Model/createuser.js";
 import Transaction from "../Model/transaction.js";
 
