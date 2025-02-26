@@ -69,16 +69,16 @@ router.post("/create", async (req, res) => {
 });
 
 // Get all transactions for a user
-router.get("/user/:userId", async (req, res) => {
-  try {
-    const { userId } = req.params;
+// router.get("/user/:userId", async (req, res) => {
+//   try {
+//     const { userId } = req.params;
 
-    const transactions = await Transaction.find({ userId });
-    res.status(200).json(transactions);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
+//     const transactions = await Transaction.find({ userId });
+//     res.status(200).json(transactions);
+//   } catch (error) {
+//     res.status(500).json({ error: error.message });
+//   }
+// });
 
 
 // Fetch all transactions
@@ -339,7 +339,7 @@ router.put("/subtract/:transactionId", async (req, res) => {
 
 
     //user
-    router.get("/user", async (req, res) => {
+    router.get("/user/:userId", async (req, res) => {
       try {
         const token = req.headers.authorization.split(" ")[1];
         const decoded = jwt.verify(token, process.env.JWT_SECRET);

@@ -47,6 +47,11 @@ export const Sidebar = () => {
             </Link>
           </li>
         
+          <li>
+            <Link href="/transaction" className="flex items-center space-x-2 text-gray-300 hover:text-white">
+              <CogIcon className="w-5 h-5" /> <span>Transaction</span>
+            </Link>
+          </li>
         </ul>
       </nav>
     </aside>
